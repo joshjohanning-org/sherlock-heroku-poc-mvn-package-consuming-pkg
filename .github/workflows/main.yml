@@ -78,11 +78,14 @@ jobs:
 
     - name: View settings.xml
       run: cat ~/.m2/settings.xml 
-
-    - name: mkdir
-      run: mkdir ${{ github.workspace }}/tempdir
+      
     - name: Install with Maven
-      run: mvn install -s ~/.m2/settings.xml -DoutputDirectory=${{ github.workspace }}/tempdir
+      run: mvn install -s ~/.m2/settings.xml
+      
+    - name: mv
+      run: mv /home/runner/.m2/repository/com/sherlock/herokupoc/1.0.0-202201071809/herokupoc-1.0.0-202201071809.jar herokupoc-1.0.0-202201071809.jar
         
     - name: ls
-      run: ls -a ${{ github.workspace }}/tempdir
+      run: ls -a
+      
+
