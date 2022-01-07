@@ -27,5 +27,5 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: download mvn
-        run: mvn dependency:copy -Dartifact=com.sherlock:herokupoc:1.0.0-202201071559 -DoutputDirectory=.
+        run: mvn dependency:copy -Dartifact=com.sherlock:herokupoc:1.0.0-202201071559 -DremoteRepositories=https://maven.pkg.github.com/joshjohanning-org/sherlock-heroku-poc-mvn-package/ -DoutputDirectory=.
 
