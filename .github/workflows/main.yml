@@ -36,7 +36,7 @@ jobs:
         
       # Runs a single command using the runners shell
       - name: download mvn
-        run: mvn dependency:copy -Dartifact=com.sherlock:herokupoc:1.0.0-202201071559 -DoutputDirectory=.
+        run: mvn dependency:copy -Dartifact=com.sherlock:herokupoc:1.0.0-202201071559 -DoutputDirectory=${{ github.workspace }} 
 
   build3: 
     runs-on: ubuntu-latest
@@ -51,4 +51,4 @@ jobs:
         server-password: ${{ secrets.my_secret }}
         settings-path: ${{ github.workspace }} 
     - name: download mvn2
-      run: mvn dependency:get -DremoteRepositories=https://maven.pkg.github.com/joshjohanning-org/sherlock-heroku-poc-mvn-package/ -DgroupId="" -DartifactId=com.sherlock.herokupoc -Dversion=1.0.0-202201071559 -Dtransitive=false
+      run: mvn dependency:get -DremoteRepositories=https://maven.pkg.github.com/joshjohanning-org/sherlock-heroku-poc-mvn-package/ -DgroupId="com.sherlock" -DartifactId=herokupoc -Dversion=1.0.0-202201071559 -Dtransitive=false
