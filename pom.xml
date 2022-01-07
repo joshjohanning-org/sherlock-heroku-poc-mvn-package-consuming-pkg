@@ -52,6 +52,14 @@
 	  </repository>
         </repositories>
 
+	<servers>
+	  <server>
+	    <id>github</id>
+	    <username>USERNAME</username>
+	    <password>TOKEN</password>
+	  </server>
+	</servers>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
