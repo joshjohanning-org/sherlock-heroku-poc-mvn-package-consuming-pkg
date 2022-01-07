@@ -82,11 +82,11 @@ jobs:
     - name: Install with Maven
       run: mvn install -s ~/.m2/settings.xml
       
-    - name: ls
-      run: ls -a -R /home/runner/.m2/
+    # - name: ls
+    #   run: ls -a -R /home/runner/.m2/
       
     - name: mv
-      run: mv /home/runner/.m2/repository/com/sherlock/herokupoc/1.0.0-202201071809/herokupoc-1.0.0-202201071809.jar herokupoc-1.0.0-202201071809.jar
+      run: find /home/runner/.m2 -name "*herokupoc-1.*.jar" -exec mv {} .;
         
     - name: ls
       run: ls -a
