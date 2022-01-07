@@ -30,7 +30,7 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-          server-id: github 
+          server-id: github2
           server-password: ${{ secrets.my_secret }}
           settings-path: ${{ github.workspace }} 
         
@@ -47,7 +47,7 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
-        server-id: github 
+        server-id: github2
         server-password: ${{ secrets.my_secret }}
         settings-path: ${{ github.workspace }} 
     - name: download mvn2
