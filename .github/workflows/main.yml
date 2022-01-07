@@ -64,3 +64,20 @@ jobs:
           -L \
           -o herokupoc-1.0.0-202201071559.jar
         ls -a
+
+
+  build5:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: maven-settings-xml-action
+      uses: whelk-io/maven-settings-xml-action@v20
+      with:
+        repositories: '[{ "id": "fix_world", "url": "https://maven.pkg.github.com/joshjohanning-org/sherlock-heroku-poc-mvn-package" }]'
+        servers: '[{ "id": "fix_world", "username": "joshjohanning", "password": "${{ secrets.MY_SECRET }}" }]'
+
+    - name: View settings.xml
+      run: cat ~/.m2/settings.xml 
+
+    - name: Install with Maven
+      run: mvn install -s ~/.m2/settings.xml 
