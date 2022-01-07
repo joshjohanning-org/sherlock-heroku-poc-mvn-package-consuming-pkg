@@ -79,8 +79,10 @@ jobs:
     - name: View settings.xml
       run: cat ~/.m2/settings.xml 
 
+    - name: mkdir
+      run: mkdir ${{ github.workspace }}/tempdir
     - name: Install with Maven
-      run: mvn install -s ~/.m2/settings.xml -Ddir=downloaddir
+      run: mvn install -s ~/.m2/settings.xml -Ddir=${{ github.workspace }}/tempdir
         
     - name: ls
-      run: ls -a downloaddir
+      run: ls -a ${{ github.workspace }}/tempdir
