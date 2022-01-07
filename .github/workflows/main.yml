@@ -52,3 +52,15 @@ jobs:
         settings-path: ${{ github.workspace }} 
     - name: download mvn2
       run: mvn dependency:get -DremoteRepositories=https://maven.pkg.github.com/joshjohanning-org/sherlock-heroku-poc-mvn-package/ -DgroupId="com.sherlock" -DartifactId=herokupoc -Dversion=1.0.0-202201071559 -Dtransitive=false
+
+  download:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: download pkg
+      run: | 
+        curl 'https://maven.pkg.github.com/joshjohanning-org/sherlock-heroku-poc-mvn-package/com/sherlock/herokupoc/1.0.0-202201071559/herokupoc-1.0.0-202201071559.jar' \
+          -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }} \
+          -L \
+          -o herokupoc-1.0.0-202201071559.jar
+        ls -a
