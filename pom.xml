@@ -33,9 +33,9 @@
 	</properties>
 
 	<scm>
-		<connection>scm:git:git@github.com:arjunchakri/sherlock-heroku-poc.git</connection>
-		<developerConnection>scm:git:git@github.com:arjunchakri/sherlock-heroku-poc.git</developerConnection>
-		<url>https://github.com/arjunchakri/sherlock-heroku-poc/tree/master</url>
+		<connection>scm:git:git@github.com:joshjohanning-org/sherlock-heroku-poc-mvn-package.git</connection>
+		<developerConnection>scm:git:git@github.com:joshjohanning-org/sherlock-heroku-poc-mvn-package.git</developerConnection>
+		<url>https://github.com/joshjohanning-org/sherlock-heroku-poc-mvn-package/tree/master</url>
 	</scm>
 
 	<dependencies>
@@ -100,7 +100,7 @@
 		<repository>
 			<id>github</id>
 			<name>GitHub Packages</name>
-			<url>https://maven.pkg.github.com/arjunchakri/sherlock-heroku-poc</url>
+			<url>https://maven.pkg.github.com/joshjohanning-org/sherlock-heroku-poc-mvn-package</url>
 		</repository>
 	</distributionManagement>
 
