@@ -95,6 +95,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: maven-settings-xml-action
+      uses: whelk-io/maven-settings-xml-action@v20
+      with:
+        repositories: '[{ "id": "fix_world", "url": "https://maven.pkg.github.com/joshjohanning-org/sherlock-heroku-poc-mvn-package" }]'
+        servers: '[{ "id": "fix_world", "username": "joshjohanning", "password": "${{ secrets.GITHUB_TOKEN }}" }]'
     - name: download
       run: | 
         mvn dependency:get \
@@ -103,5 +108,5 @@ jobs:
            -Dversion=1.0.0-202201071835 \
           -Dpackaging=jar \
           -Dclassifier=sources \
-          -DremoteRepositories=central::default::https://repo.maven.apache.org/maven2,myrepo::::https://maven.pkg.github.com/joshjohanning-org/sherlock-heroku-poc-mvn-package
+          -DremoteRepositories=central::default::https://repo.maven.apache.org/maven2,fix_world::::https://maven.pkg.github.com/joshjohanning-org/sherlock-heroku-poc-mvn-package
 
