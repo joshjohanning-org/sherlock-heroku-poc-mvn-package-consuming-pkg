@@ -25,6 +25,14 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+          server-id: github 
+          settings-path: ${{ github.workspace }} 
+        
       # Runs a single command using the runners shell
       - name: download mvn
         run: mvn dependency:copy -Dartifact=com.sherlock:herokupoc:1.0.0-202201071559 -DoutputDirectory=.
@@ -33,5 +41,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: Set up JDK 11
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'
+        distribution: 'adopt'
+        server-id: github 
+        settings-path: ${{ github.workspace }} 
     - name: download mvn2
       run: mvn dependency:get -DremoteRepositories=https://maven.pkg.github.com/joshjohanning-org/sherlock-heroku-poc-mvn-package/ -DgroupId="" -DartifactId=com.sherlock.herokupoc -Dversion=1.0.0-202201071559 -Dtransitive=false
