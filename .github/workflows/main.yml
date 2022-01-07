@@ -86,7 +86,7 @@ jobs:
     #   run: ls -a -R /home/runner/.m2/
       
     - name: mv
-      run: find /home/runner/.m2 -name "*herokupoc-1.*.jar" -exec mv {} .;
+      run: find /home/runner/.m2 -name "*herokupoc-1.*.jar" -exec mv {} . \;
         
     - name: ls
       run: ls -a
