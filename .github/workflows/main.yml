@@ -91,4 +91,17 @@ jobs:
     - name: ls
       run: ls -a
       
+  mvncli:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: download
+      run: | 
+        mvn dependency:get \
+          -DgroupId=com.sherlock \
+          -DartifactId=herokupoc \
+           -Dversion=1.0.0-202201071835 \
+          -Dpackaging=jar \
+          -Dclassifier=sources \
+          -DremoteRepositories=central::default::https://repo.maven.apache.org/maven2,myrepo::::https://maven.pkg.github.com/joshjohanning-org/sherlock-heroku-poc-mvn-package
 
