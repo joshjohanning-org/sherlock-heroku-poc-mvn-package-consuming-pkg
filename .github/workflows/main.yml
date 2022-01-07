@@ -31,6 +31,7 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
           server-id: github 
+          server-password: ${{ secrets.my_secret }}
           settings-path: ${{ github.workspace }} 
         
       # Runs a single command using the runners shell
@@ -47,6 +48,7 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
         server-id: github 
+        server-password: ${{ secrets.my_secret }}
         settings-path: ${{ github.workspace }} 
     - name: download mvn2
       run: mvn dependency:get -DremoteRepositories=https://maven.pkg.github.com/joshjohanning-org/sherlock-heroku-poc-mvn-package/ -DgroupId="" -DartifactId=com.sherlock.herokupoc -Dversion=1.0.0-202201071559 -Dtransitive=false
