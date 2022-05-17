@@ -83,6 +83,13 @@
 			<groupId>io.micrometer</groupId>
 			<artifactId>micrometer-registry-prometheus</artifactId>
 		</dependency>
+		
+		<!-- https://maven.pkg.github.com/joshjohanning-org/github-maven-package-example -->
+		<dependency>
+			<groupId>com.mattamorphic</groupId>
+			<artifactId>github-maven-package-example</artifactId>
+			<version>0.4</version>
+		</dependency>
 
 	</dependencies>
 
