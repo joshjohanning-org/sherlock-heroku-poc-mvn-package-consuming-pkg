@@ -22,7 +22,19 @@ jobs:
         distribution: 'adopt'
         server-id: github 
         settings-path: ${{ github.workspace }} 
-          
+     
+    - name: maven-settings-xml-action
+      uses: whelk-io/maven-settings-xml-action@v20
+      with:
+        repositories: >
+          [
+            {
+              "id": "github-maven-package-example",
+              "name": "github-maven-package-example",
+              "url": "https://maven.pkg.github.com/joshjohanning-org/github-maven-package-example"
+            }
+          ]
+
     - name: Build with Maven
       run: mvn clean package 
 
