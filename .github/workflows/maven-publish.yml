@@ -26,6 +26,7 @@ jobs:
     - name: maven-settings-xml-action
       uses: whelk-io/maven-settings-xml-action@v20
       with:
+        output_file: $GITHUB_WORKSPACE/settings.xml
         servers: '[{ "id": "github", "username": "joshjohanning", "password": "${{ github.token }}" }]'
         repositories: >
           [
