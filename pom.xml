@@ -84,11 +84,18 @@
 			<artifactId>micrometer-registry-prometheus</artifactId>
 		</dependency>
 		
-		<!-- https://maven.pkg.github.com/joshjohanning-org/github-maven-package-example -->
+		<!-- https://maven.pkg.github.com/joshjohanning-org/github-maven-package-sample -->
 		<dependency>
 			<groupId>com.joshjohanning</groupId>
 			<artifactId>github-maven-package-sample</artifactId>
 			<version>0.0.5</version>
+		</dependency>
+
+		<!-- https://maven.pkg.github.com/joshjohanning-org/github-maven-package-sample2 -->
+		<dependency>
+			<groupId>com.joshjohanning</groupId>
+			<artifactId>github-maven-package-sample2</artifactId>
+			<version>0.0.6</version>
 		</dependency>
 
 	</dependencies>
