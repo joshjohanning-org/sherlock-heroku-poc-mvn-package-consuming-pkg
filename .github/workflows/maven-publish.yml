@@ -26,13 +26,16 @@ jobs:
     - name: maven-settings-xml-action
       uses: whelk-io/maven-settings-xml-action@v20
       with:
-        output_file: $GITHUB_WORKSPACE/settings.xml
+        # output_file: $GITHUB_WORKSPACE/settings.xml
         servers: '[{ "id": "github", "username": "joshjohanning", "password": "${{ secrets.GHEC_TOKEN }}" }]'
         repositories: >
           [
+            { 
+              "id": "central",
+              "url": "https://repo1.maven.org/maven2"
+            },
             {
               "id": "github",
-              "name": "github-maven-package-example",
               "url": "https://maven.pkg.github.com/joshjohanning-org/github-maven-package-example"
             }
           ]
@@ -40,10 +43,12 @@ jobs:
 
     - run: cat $GITHUB_WORKSPACE/settings.xml
     
+    - run: cat ~/.m2/settings.xml
+    
     - name: Build with Maven
       run: mvn clean package 
 
     - name: Publish to GitHub Packages Apache Maven
-      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
+      run: mvn deploy # -s $GITHUB_WORKSPACE/settings.xml
       env:
         GITHUB_TOKEN: ${{ github.token }}
