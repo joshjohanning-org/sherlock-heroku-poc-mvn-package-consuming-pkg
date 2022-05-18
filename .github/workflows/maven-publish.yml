@@ -43,6 +43,10 @@ jobs:
     
     - name: Build with Maven
       run: mvn clean package -s $GITHUB_WORKSPACE/settings.xml
+      env:
+        GHEC_TOKEN: ${{ secrets.GHEC_TOKEN }}
 
     - name: Publish to GitHub Packages Apache Maven
       run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
+      env:
+        GHEC_TOKEN: ${{ secrets.GHEC_TOKEN }}
