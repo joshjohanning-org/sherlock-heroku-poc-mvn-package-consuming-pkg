@@ -86,7 +86,7 @@
 		
 		<!-- https://maven.pkg.github.com/joshjohanning-org/github-maven-package-example -->
 		<dependency>
-			<groupId>com.mattamorphic</groupId>
+			<groupId>com.joshjohanning</groupId>
 			<artifactId>github-maven-package-sample</artifactId>
 			<version>0.0.5</version>
 		</dependency>
