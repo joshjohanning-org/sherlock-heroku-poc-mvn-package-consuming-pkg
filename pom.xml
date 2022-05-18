@@ -33,9 +33,9 @@
 	</properties>
 
 	<scm>
-		<connection>scm:git:git@github.com:joshjohanning-org/sherlock-heroku-poc-mvn-package.git</connection>
-		<developerConnection>scm:git:git@github.com:joshjohanning-org/sherlock-heroku-poc-mvn-package.git</developerConnection>
-		<url>https://github.com/joshjohanning-org/sherlock-heroku-poc-mvn-package/tree/master</url>
+		<connection>scm:git:git@github.com:joshjohanning-org/sherlock-heroku-poc-mvn-package-consuming.git</connection>
+		<developerConnection>scm:git:git@github.com:joshjohanning-org/sherlock-heroku-poc-mvn-package-consuming.git</developerConnection>
+		<url>https://github.com/joshjohanning-org/sherlock-heroku-poc-mvn-package-consuming/tree/master</url>
 	</scm>
 
 	<dependencies>
