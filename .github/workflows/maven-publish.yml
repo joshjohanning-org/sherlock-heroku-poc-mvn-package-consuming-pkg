@@ -30,16 +30,15 @@ jobs:
         servers: '[{ "id": "github", "username": "joshjohanning", "password": "${{ secrets.GHEC_TOKEN }}" }]'
         repositories: >
           [
-            { 
-              "id": "central",
-              "url": "https://repo1.maven.org/maven2"
-            },
-            {
-              "id": "github",
-              "url": "https://maven.pkg.github.com/joshjohanning-org/github-maven-package-sample"
-            }
-          ]
-
+              {
+                "id": "central",
+                "url": "https://repo1.maven.org/maven2"
+              },
+              {
+                "id": "github",
+                "url": "https://maven.pkg.github.com/joshjohanning-org/github-maven-package-sample"
+              }
+            ]
 
     - run: cat $GITHUB_WORKSPACE/settings.xml
     
