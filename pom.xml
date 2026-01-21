@@ -32,6 +32,24 @@
 
 	</properties>
 
+    <profiles>
+        <profile>
+            <id>github</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+			<distributionManagement>
+				<repository>
+					<id>github</id>
+					<name>GitHub Packages</name>
+					<url>https://maven.pkg.github.com/joshjohanning-org/sherlock-heroku-poc-mvn-package-consuming-pkg</url>
+				</repository>
+			</distributionManagement>
+        </profile>
+    </profiles>
+
+	
+
 	<scm>
 		<connection>scm:git:git@github.com:joshjohanning-org/sherlock-heroku-poc-mvn-package-consuming-pkg.git</connection>
 		<developerConnection>scm:git:git@github.com:joshjohanning-org/sherlock-heroku-poc-mvn-package-consuming-pkg.git</developerConnection>
@@ -109,14 +127,5 @@
 
 		</plugins>
 	</build>
-
-	<distributionManagement>
-		<repository>
-			<id>github</id>
-			<name>GitHub Packages</name>
-			<url>https://maven.pkg.github.com/joshjohanning-org/sherlock-heroku-poc-mvn-package-consuming-pkg</url>
-		</repository>
-	</distributionManagement>
-
 
 </project>
